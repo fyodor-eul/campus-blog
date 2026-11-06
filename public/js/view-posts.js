@@ -184,9 +184,12 @@ document.getElementById("back-btn").addEventListener("click", showHome);
 
 document.getElementById("nav-home").addEventListener("click", showHome);
 
-// Placeholder for Moses's Create Post feature
 document.getElementById("create-post-btn").addEventListener("click", () => {
-  alert("Create Post feature will be implemented soon.");
+  document.getElementById("home-view").classList.add("hidden");
+  document.getElementById("post-detail-view").classList.add("hidden");
+  document.getElementById("create-post-view").classList.remove("hidden");
+
+  window.scrollTo(0, 0);
 });
 
 // Placeholder for Thiha's Update Post feature
