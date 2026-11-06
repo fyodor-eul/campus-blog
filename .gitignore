@@ -1,3 +1,7 @@
+# JSON data files
+utils/posts.json
+utils/comments.json
+
 # Logs
 logs
 *.log
