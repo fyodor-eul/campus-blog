@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusBlog | Home</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/view-posts.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="brand" id="home-link">
+        <span class="brand-icon">CB</span>
+        <span>CampusBlog</span>
+      </a>
+
+      <nav class="navigation">
+        <button type="button" id="nav-home" class="nav-link">
+          Home
+        </button>
+
+        <button type="button" id="create-post-btn" class="btn btn-primary">
+          + Create Post
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Homepage -->
+    <section id="home-view">
+      <div class="page-heading">
+        <div>
+          <h1>Recent Blog Posts</h1>
+          <p>Explore the latest stories from our community.</p>
+        </div>
+      </div>
+
+      <p id="posts-message" class="status-message" role="status">
+        Loading blog posts...
+      </p>
+
+      <div id="posts-container" class="posts-grid"></div>
+    </section>
+
+    <!-- Individual post details -->
+    <section id="post-detail-view" class="hidden">
+      <button type="button" id="back-btn" class="back-button">
+        ← Back to Blogs
+      </button>
+
+      <article class="post-detail">
+        <div class="detail-actions">
+          <span class="category-label">Community Blog</span>
+
+          <div class="action-buttons">
+            <button type="button" id="update-post-btn" class="btn btn-outline">
+              Update Post
+            </button>
+
+            <button type="button" id="delete-post-btn" class="btn btn-danger">
+              Delete Post
+            </button>
+          </div>
+        </div>
+
+        <h1 id="detail-title"></h1>
+
+        <div class="post-meta">
+          <span id="detail-author"></span>
+          <span>•</span>
+          <span id="detail-date"></span>
+        </div>
+
+        <div id="detail-cover" class="detail-cover"></div>
+
+        <p id="detail-content" class="detail-content"></p>
+      </article>
+
+      <!-- Jade's Add Comment feature -->
+      <section class="comments-section">
+        <div class="section-heading">
+          <h2>Comments</h2>
+        </div>
+
+        <div id="comments-container">
+          <p class="muted-text">
+            Comments will appear here once the comment feature is integrated.
+          </p>
+        </div>
+
+        <div class="comment-form-placeholder">
+          <h3>Leave a Comment</h3>
+
+          <label for="comment-name">Your Name</label>
+          <input
+            type="text"
+            id="comment-name"
+            placeholder="Enter your name"
+            disabled
+          >
+
+          <label for="comment-content">Your Comment</label>
+          <textarea
+            id="comment-content"
+            rows="4"
+            placeholder="Write your comment..."
+            disabled
+          ></textarea>
+
+          <button type="button" id="add-comment-btn" class="btn btn-primary" disabled>
+            Post Comment
+          </button>
+        </div>
+      </section>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 CampusBlog. A student blogging platform.</p>
+  </footer>
+
+</body>
+</html>
