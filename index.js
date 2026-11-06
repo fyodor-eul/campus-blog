@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 
 const { viewPosts } = require("./utils/viewPostUtil");
+const { createPost } = require("./utils/createPostUtil");
 
 const app = express();
 const PORT = 5050;
@@ -15,6 +16,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Routes
 app.get("/posts", viewPosts);
+app.post("/posts", createPost);
 
 // Start server
 app.listen(PORT, () => {
