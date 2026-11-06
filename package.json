@@ -1,0 +1,23 @@
+{
+  "name": "campus-blog",
+  "version": "1.0.0",
+  "description": "CampusBlog: a simple blogging platform built for the DVOPS (DevOps Essentials) team project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fyodor-eul/campus-blog.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/fyodor-eul/campus-blog/issues"
+  },
+  "homepage": "https://github.com/fyodor-eul/campus-blog#readme",
+  "dependencies": {
+    "body-parser": "^2.4.0",
+    "express": "^5.3.0"
+  }
+}
