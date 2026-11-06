@@ -1,0 +1,26 @@
+[
+  {
+    "postId": "P001",
+    "title": "Getting Started with Web Development",
+    "author": "Alex Tan",
+    "content": "I started learning web development this semester, and building small projects has helped me understand HTML, CSS and JavaScript much better. My advice is to start with a simple page, practise one concept at a time, and avoid worrying too much about making everything perfect on the first attempt.",
+    "createdAt": "2026-11-02T09:30:00Z",
+    "updatedAt": null
+  },
+  {
+    "postId": "P002",
+    "title": "How I Organise My Study Week",
+    "author": "Jade Lim",
+    "content": "At the beginning of each week, I list my assignments, classes and personal tasks. I split larger assignments into smaller steps and give each step a realistic deadline. This makes it easier to see what needs attention and leaves some time for breaks.",
+    "createdAt": "2026-11-03T14:15:00Z",
+    "updatedAt": "2026-11-04T08:45:00Z"
+  },
+  {
+    "postId": "P003",
+    "title": "What I Learned from My First Group Project",
+    "author": "Thiha Aung",
+    "content": "Working on a group project taught me that agreeing on file structures and naming conventions early can save a lot of time. We also found it useful to make small commits and review each other's changes before merging them. Clear communication made the work easier to coordinate.",
+    "createdAt": "2026-11-05T11:00:00Z",
+    "updatedAt": null
+  }
+]
