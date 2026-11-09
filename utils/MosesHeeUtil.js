@@ -1,4 +1,3 @@
-
 const fs = require("fs").promises;
 const path = require("path");
 
@@ -22,11 +21,15 @@ async function createPost(req, res) {
       });
     }
 
+    const trimmedTitle = title.trim();
+    const trimmedAuthor = author.trim();
+    const trimmedContent = content.trim();
+
     // Validation 2: Maximum input lengths
     if (
-      title.trim().length > 100 ||
-      author.trim().length > 50 ||
-      content.trim().length > 5000
+      trimmedTitle.length > 100 ||
+      trimmedAuthor.length > 50 ||
+      trimmedContent.length > 5000
     ) {
       return res.status(400).json({
         message: "Input exceeds the maximum allowed length."
@@ -49,33 +52,40 @@ async function createPost(req, res) {
       }
     }
 
+    // Validation 3: Reject posts with the same title, author and content
+    const isDuplicate = posts.some(
+      (post) =>
+        post.title === trimmedTitle &&
+        post.author === trimmedAuthor &&
+        post.content === trimmedContent
+    );
+
+    if (isDuplicate) {
+      return res.status(409).json({
+        message: "A blog post with the same title, author and content already exists."
+      });
+    }
+
     // Generate a unique post ID
     const postId = "P" + Date.now().toString();
 
-    // Create the new post
     const newPost = {
       postId,
-      title: title.trim(),
-      author: author.trim(),
-      content: content.trim(),
+      title: trimmedTitle,
+      author: trimmedAuthor,
+      content: trimmedContent,
       createdAt: new Date().toISOString(),
       updatedAt: null
     };
 
     // Save to posts.json
     posts.push(newPost);
-
-    await fs.writeFile(
-      POSTS_FILE,
-      JSON.stringify(posts, null, 2),
-      "utf8"
-    );
+    await fs.writeFile(POSTS_FILE, JSON.stringify(posts, null, 2), "utf8");
 
     return res.status(201).json({
       message: "Blog post created successfully.",
       post: newPost
     });
-
   } catch (error) {
     console.error("Error creating post:", error);
 
