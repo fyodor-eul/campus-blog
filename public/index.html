@@ -33,22 +33,38 @@
   </header>
 
   <main class="container">
+   
+<!-- Homepage: Student Learning Hub -->
+<section id="home-view">
+  <div class="page-heading">
+    <div>
+      <p class="homepage-kicker">CampusBlog Learning Hub</p>
+      <h1>Discover Student Learning Experiences</h1>
+      <p>Explore practical study tips and project experiences.</p>
+      <p>Connect with students and learn from their journeys.</p>
+    </div>
+  </div>
 
-    <!-- Homepage -->
-    <section id="home-view">
-      <div class="page-heading">
-        <div>
-          <h1>Recent Blog Posts</h1>
-          <p>Explore the latest stories from our community.</p>
-        </div>
-      </div>
+  <section class="home-topics" aria-label="Learning topics">
+    <h2>Explore Learning Resources</h2>
+    <ul>
+      <li>Study strategies and examination preparation</li>
+      <li>Group projects and teamwork experiences</li>
+      <li>Programming tutorials and technical skills</li>
+      <li>Internship preparation and career advice</li>
+    </ul>
+  </section>
 
-      <p id="posts-message" class="status-message" role="status">
-        Loading blog posts...
-      </p>
-
-      <div id="posts-container" class="posts-grid"></div>
-    </section>
+  <section class="home-feed" aria-label="Learning feed">
+    <h2>Student Learning Stories</h2>
+    <p>Read helpful experiences shared by fellow students.</p>
+    <p id="posts-message" class="status-message" role="status">
+      Loading learning stories...
+    </p>
+    <div id="posts-container" class="posts-grid"></div>
+  </section>
+</section>
+    
     
 <!-- Create Blog Post -->
 <section id="create-post-view" class="hidden">
