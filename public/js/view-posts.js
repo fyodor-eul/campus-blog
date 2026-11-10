@@ -192,11 +192,6 @@ document.getElementById("create-post-btn").addEventListener("click", () => {
   window.scrollTo(0, 0);
 });
 
-// Placeholder for Thiha's Update Post feature
-document.getElementById("update-post-btn").addEventListener("click", () => {
-  alert("Update Post feature will be implemented soon.");
-});
-
 // Placeholder for Moses's Delete Post feature
 document.getElementById("delete-post-btn").addEventListener("click", () => {
   alert("Delete Post feature will be implemented soon.");
