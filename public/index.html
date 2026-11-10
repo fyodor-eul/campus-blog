@@ -34,20 +34,35 @@
 
   <main class="container">
 
-    <!-- Homepage -->
+    <!-- Homepage: Campus Community Hub -->
     <section id="home-view">
       <div class="page-heading">
         <div>
-          <h1>Recent Blog Posts</h1>
-          <p>Explore the latest stories from our community.</p>
+          <p class="homepage-kicker">CampusBlog Community Space</p>
+          <h1>Connect With Your Campus Community</h1>
+          <p>Stay updated with campus news and student activities.</p>
+          <p>Share experiences and discover campus opportunities.</p>
         </div>
       </div>
 
-      <p id="posts-message" class="status-message" role="status">
-        Loading blog posts...
-      </p>
+      <section class="home-topics" aria-label="Community topics">
+        <h2>Discover Campus Activities</h2>
+        <ul>
+          <li>Campus events and student announcements</li>
+          <li>Clubs and co-curricular activities</li>
+          <li>Student discussions and community updates</li>
+          <li>Campus lifestyle and social experiences</li>
+        </ul>
+      </section>
 
-      <div id="posts-container" class="posts-grid"></div>
+      <section class="home-feed" aria-label="Community feed">
+        <h2>Latest Community Updates</h2>
+        <p>Discover what's happening across the campus.</p>
+        <p id="posts-message" class="status-message" role="status">
+          Loading community updates...
+        </p>
+        <div id="posts-container" class="posts-grid"></div>
+      </section>
     </section>
     
 <!-- Create Blog Post -->
