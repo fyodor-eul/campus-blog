@@ -416,3 +416,156 @@ button {
     font-size: 13px;
   }
 }
+
+
+/* =====================================
+   Student Learning Hub - Homepage
+   ===================================== */
+
+#home-view {
+  animation: fadeIn 0.4s ease-in;
+}
+
+/* Homepage hero */
+
+#home-view .page-heading {
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  border-radius: 20px;
+  padding: 48px;
+  margin-bottom: 36px;
+  color: white;
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.15);
+}
+
+#home-view .homepage-kicker {
+  display: inline-block;
+  color: #bfdbfe;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+}
+
+#home-view .page-heading h1 {
+  color: white;
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.2;
+  max-width: 750px;
+  margin-bottom: 18px;
+}
+
+#home-view .page-heading p {
+  color: #dbeafe;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Learning topics */
+
+#home-view .home-topics {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 30px 34px;
+  margin-bottom: 40px;
+  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.04);
+}
+
+#home-view .home-topics h2 {
+  font-size: 24px;
+  color: #0f172a;
+  margin: 0 0 24px;
+}
+
+#home-view .home-topics ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#home-view .home-topics li {
+  padding: 20px;
+  background: #eff6ff;
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+  color: #1e40af;
+  font-size: 15px;
+  font-weight: 600;
+  transition: transform 0.2s, background 0.2s;
+}
+
+#home-view .home-topics li::before {
+  content: "✦";
+  margin-right: 10px;
+  color: #2563eb;
+}
+
+#home-view .home-topics li:hover {
+  background: #dbeafe;
+  transform: translateY(-3px);
+}
+
+/* Student stories */
+
+#home-view .home-feed {
+  margin-top: 10px;
+}
+
+#home-view .home-feed h2 {
+  font-size: 27px;
+  color: #0f172a;
+  margin: 0 0 6px;
+}
+
+#home-view .home-feed > p:not(.status-message) {
+  color: #64748b;
+  font-size: 15px;
+  margin: 0 0 26px;
+}
+
+/* Smooth entrance */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Homepage responsiveness */
+
+@media (max-width: 768px) {
+  #home-view .page-heading {
+    padding: 32px 24px;
+    border-radius: 16px;
+  }
+
+  #home-view .home-topics {
+    padding: 24px;
+  }
+
+  #home-view .home-topics ul {
+    grid-template-columns: 1fr;
+  }
+
+  #home-view .home-feed h2 {
+    font-size: 23px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #home-view,
+  #home-view .home-topics li {
+    animation: none;
+    transition: none;
+  }
+}
