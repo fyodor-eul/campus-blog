@@ -3,7 +3,7 @@ const express = require("express");
 const path = require("path");
 
 const { viewPosts } = require("./utils/viewPostUtil");
-const { createPost } = require("./utils/createPostUtil");
+const { createPost } = require("./utils/MosesHeeUtil");
 
 const app = express();
 const PORT = 5050;
