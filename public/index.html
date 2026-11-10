@@ -33,37 +33,38 @@
   </header>
 
   <main class="container">
+   
+<!-- Homepage: Student Learning Hub -->
+<section id="home-view">
+  <div class="page-heading">
+    <div>
+      <p class="homepage-kicker">CampusBlog Learning Hub</p>
+      <h1>Discover Student Learning Experiences</h1>
+      <p>Explore practical study tips and project experiences.</p>
+      <p>Connect with students and learn from their journeys.</p>
+    </div>
+  </div>
 
-    <!-- Homepage: Campus Community Hub -->
-    <section id="home-view">
-      <div class="page-heading">
-        <div>
-          <p class="homepage-kicker">CampusBlog Community Space</p>
-          <h1>Connect With Your Campus Community</h1>
-          <p>Stay updated with campus news and student activities.</p>
-          <p>Share experiences and discover campus opportunities.</p>
-        </div>
-      </div>
+  <section class="home-topics" aria-label="Learning topics">
+    <h2>Explore Learning Resources</h2>
+    <ul>
+      <li>Study strategies and examination preparation</li>
+      <li>Group projects and teamwork experiences</li>
+      <li>Programming tutorials and technical skills</li>
+      <li>Internship preparation and career advice</li>
+    </ul>
+  </section>
 
-      <section class="home-topics" aria-label="Community topics">
-        <h2>Discover Campus Activities</h2>
-        <ul>
-          <li>Campus events and student announcements</li>
-          <li>Clubs and co-curricular activities</li>
-          <li>Student discussions and community updates</li>
-          <li>Campus lifestyle and social experiences</li>
-        </ul>
-      </section>
-
-      <section class="home-feed" aria-label="Community feed">
-        <h2>Latest Community Updates</h2>
-        <p>Discover what's happening across the campus.</p>
-        <p id="posts-message" class="status-message" role="status">
-          Loading community updates...
-        </p>
-        <div id="posts-container" class="posts-grid"></div>
-      </section>
-    </section>
+  <section class="home-feed" aria-label="Learning feed">
+    <h2>Student Learning Stories</h2>
+    <p>Read helpful experiences shared by fellow students.</p>
+    <p id="posts-message" class="status-message" role="status">
+      Loading learning stories...
+    </p>
+    <div id="posts-container" class="posts-grid"></div>
+  </section>
+</section>
+    
     
 <!-- Create Blog Post -->
 <section id="create-post-view" class="hidden">
