@@ -166,6 +166,9 @@ function showPostDetails(postId) {
   homeView.classList.add("hidden");
   postDetailView.classList.remove("hidden");
 
+  // Load comments for the selected blog post
+  loadComments(postId)
+
   window.scrollTo(0, 0);
 }
 
