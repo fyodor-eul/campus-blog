@@ -48,6 +48,9 @@ async function loadComments(postId) {
             ).toLocaleDateString("en-SG");
 
             commentCard.append(username, content, date);
+            commentCard.appendChild(
+                createDeleteCommentButton(comment, postId)
+            );
             commentsContainer.appendChild(commentCard);
         });
 
