@@ -5,9 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CampusBlog | Home</title>
-  <script src="/js/create-post.js" defer></script>
+  <script src="/js/MosesHee.js" defer></script>
   <script src="/js/view-posts.js" defer></script>
   <script src="/js/thiha.js" defer></script>
+  <script src="/js/JadeTey.js" defer></script>
   <link rel="stylesheet" href="/css/styles.css">
 <link rel="stylesheet" href="/css/create-post.css">
 </head>
@@ -183,29 +184,34 @@
           </p>
         </div>
 
-        <div class="comment-form-placeholder">
-          <h3>Leave a Comment</h3>
+        
+      <div class="comment-form-placeholder">
+        <h3>Leave a Comment</h3>
 
-          <label for="comment-name">Your Name</label>
-          <input
-            type="text"
-            id="comment-name"
-            placeholder="Enter your name"
-            disabled
-          >
+        <label for="comment-name">Your Name</label>
+        <input
+          type="text"
+          id="comment-name"
+          placeholder="Enter your name"
+          maxlength="50"
+          required
+        >
 
-          <label for="comment-content">Your Comment</label>
-          <textarea
-            id="comment-content"
-            rows="4"
-            placeholder="Write your comment..."
-            disabled
-          ></textarea>
+        <label for="comment-content">Your Comment</label>
+        <textarea
+          id="comment-content"
+          rows="4"
+          placeholder="Write your comment..."
+          maxlength="500"
+          required
+        ></textarea>
 
-          <button type="button" id="add-comment-btn" class="btn btn-primary" disabled>
-            Post Comment
-          </button>
-        </div>
+        <p id="comment-message" role="status" aria-live="polite"></p>
+
+        <button type="button" id="add-comment-btn" class="btn btn-primary">
+          Post Comment
+        </button>
+      </div>
       </section>
     </section>
 

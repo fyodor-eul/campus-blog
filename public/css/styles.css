@@ -569,3 +569,14 @@ button {
     transition: none;
   }
 }
+
+/* Keep long comments inside the container */
+.comment-card {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    margin-bottom: 20px;
+}
+
+.comment-card p {
+    white-space: pre-wrap;
+}
