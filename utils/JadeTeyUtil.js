@@ -1,6 +1,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const Comment = require("../models/Comments");
 
 const postsFile = path.join(__dirname, "posts.json");
 const commentsFile = path.join(__dirname, "comments.json");
@@ -8,33 +9,17 @@ const commentsFile = path.join(__dirname, "comments.json");
 // Add a new comment to a blog post
 function addComment(req, res) {
     const postId = req.params.id;
-    const { username, content } = req.body || {};
 
-    // Check for empty username or comment
-    if (
-        typeof username !== "string" ||
-        typeof content !== "string" ||
-        username.trim() === "" ||
-        content.trim() === ""
-    ) {
+    // Validation 1: Validate request using Comment model
+    const validation = Comment.validateCreate(req.body);
+
+    if (!validation.valid) {
         return res.status(400).json({
-            message: "Username and comment cannot be empty."
+            message: validation.message
         });
     }
 
-    // Check username length
-    if (username.trim().length > 50) {
-        return res.status(400).json({
-            message: "Username cannot exceed 50 characters."
-        });
-    }
-
-    // Check comment length
-    if (content.trim().length > 500) {
-        return res.status(400).json({
-            message: "Comment cannot exceed 500 characters."
-        });
-    }
+    const { username, content } = req.body;
 
     try {
         // Read existing blog posts
@@ -83,14 +68,14 @@ function addComment(req, res) {
 
         const commentId = "C" + String(nextId).padStart(3, "0");
 
-        // Create the new comment
-        const newComment = {
-            commentId: commentId,
-            postId: postId,
-            username: username.trim(),
-            content: content.trim(),
-            createdAt: new Date().toISOString()
-        };
+        // Create comment using Comment model
+        const newComment = new Comment(
+            commentId,
+            postId,
+            username.trim(),
+            content.trim(),
+            new Date().toISOString()
+        );
 
         // Add the comment to the array
         comments.push(newComment);
