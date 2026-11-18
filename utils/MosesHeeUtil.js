@@ -1,40 +1,26 @@
+
 const fs = require("fs").promises;
 const path = require("path");
+const Post = require("../models/Post");
 
 const POSTS_FILE = path.join(__dirname, "posts.json");
 
 async function createPost(req, res) {
   try {
-    const { title, author, content } = req.body || {};
+    // Validation 1: Validate request using the Post model
+    const validation = Post.validateCreate(req.body);
 
-    // Validation 1: All fields are required
-    if (
-      typeof title !== "string" ||
-      typeof author !== "string" ||
-      typeof content !== "string" ||
-      !title.trim() ||
-      !author.trim() ||
-      !content.trim()
-    ) {
+    if (!validation.valid) {
       return res.status(400).json({
-        message: "Title, author and content are required."
+        message: validation.message
       });
     }
+
+    const { title, author, content } = req.body;
 
     const trimmedTitle = title.trim();
     const trimmedAuthor = author.trim();
     const trimmedContent = content.trim();
-
-    // Validation 2: Maximum input lengths
-    if (
-      trimmedTitle.length > 100 ||
-      trimmedAuthor.length > 50 ||
-      trimmedContent.length > 5000
-    ) {
-      return res.status(400).json({
-        message: "Input exceeds the maximum allowed length."
-      });
-    }
 
     // Read existing posts
     let posts = [];
@@ -52,7 +38,7 @@ async function createPost(req, res) {
       }
     }
 
-    // Validation 3: Reject posts with the same title, author and content
+    // Validation 2: Reject posts with the same title, author and content
     const isDuplicate = posts.some(
       (post) =>
         post.title === trimmedTitle &&
@@ -69,23 +55,29 @@ async function createPost(req, res) {
     // Generate a unique post ID
     const postId = "P" + Date.now().toString();
 
-    const newPost = {
+    // Create a new post using the Post model
+    const newPost = new Post(
       postId,
-      title: trimmedTitle,
-      author: trimmedAuthor,
-      content: trimmedContent,
-      createdAt: new Date().toISOString(),
-      updatedAt: null
-    };
+      trimmedTitle,
+      trimmedAuthor,
+      trimmedContent,
+      new Date().toISOString(),
+      null
+    );
 
     // Save to posts.json
     posts.push(newPost);
-    await fs.writeFile(POSTS_FILE, JSON.stringify(posts, null, 2), "utf8");
+    await fs.writeFile(
+      POSTS_FILE,
+      JSON.stringify(posts, null, 2),
+      "utf8"
+    );
 
     return res.status(201).json({
       message: "Blog post created successfully.",
       post: newPost
     });
+
   } catch (error) {
     console.error("Error creating post:", error);
 
