@@ -62,6 +62,14 @@ async function updatePost(req, res) {
       return res.status(404).json({ message: "Blog post not found." });
     }
 
+    // Error case: nothing was changed
+    if (
+      posts[index].title.trim() === newTitle &&
+      posts[index].content.trim() === newContent
+    ) {
+      return res.status(400).json({ message: "No changes were made." });
+    }
+
     // Error case: the update would make this post identical to another post.
     // Same rule as Create Post: same title, author and content.
     // The author doesn't change on update, so use the existing author.
