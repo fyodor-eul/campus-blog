@@ -121,6 +121,15 @@
       return;
     }
 
+    // No request needed if nothing was changed (the backend checks this too)
+    if (
+      title === currentPost.title.trim() &&
+      content === currentPost.content.trim()
+    ) {
+      showMessage("No changes were made.", "error");
+      return;
+    }
+
     submitBtn.disabled = true;
     showMessage("Saving changes...", "success");
 
