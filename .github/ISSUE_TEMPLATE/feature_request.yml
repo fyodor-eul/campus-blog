@@ -1,0 +1,75 @@
+
+name: "Feature Request"
+description: "Suggest a new feature or improvement for CampusBlog"
+title: "[Feature]: "
+labels: ["enhancement"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have an idea to improve CampusBlog?
+        Fill in the details below so the team can review it.
+
+  - type: dropdown
+    id: feature
+    attributes:
+      label: Related Feature
+      description: Which part of CampusBlog does this suggestion relate to?
+      options:
+        - Create Post
+        - View Posts
+        - Update Post
+        - Delete Post
+        - Add Comment
+        - Delete Comment
+        - Homepage
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Feature Description
+      description: Explain the feature or improvement you are suggesting.
+      placeholder: Describe your idea.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason for Request
+      description: Why would this feature be useful?
+      placeholder: Explain the problem this feature would solve.
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: How could this feature be implemented?
+      placeholder: Describe your suggested approach.
+    validations:
+      required: false
+
+  - type: textarea
+    id: criteria
+    attributes:
+      label: Acceptance Criteria
+      description: What conditions should be met for this feature to be complete?
+      placeholder: |
+        - [ ] Requirement 1
+        - [ ] Requirement 2
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Additional Information
+      description: Add screenshots, examples or references if available.
+    validations:
+      required: false
