@@ -1,0 +1,73 @@
+
+name: "Bug Report"
+description: "Report a bug found in CampusBlog"
+title: "[Bug]: "
+labels: ["bug"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug! Please provide the details below.
+
+  - type: dropdown
+    id: feature
+    attributes:
+      label: Affected Feature
+      description: Which CampusBlog feature has the problem?
+      options:
+        - Create Post
+        - View Posts
+        - Update Post
+        - Delete Post
+        - Add Comment
+        - Delete Comment
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: Explain what went wrong.
+      placeholder: Describe the problem you encountered.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Explain how another developer can reproduce the bug.
+      placeholder: |
+        1. Start CampusBlog
+        2. Open the affected feature
+        3. Perform the action
+        4. Observe the problem
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Result
+      description: What should happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Result
+      description: What happened instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Screenshots or Error Messages
+      description: Add screenshots, API responses or error messages.
+    validations:
+      required: false
