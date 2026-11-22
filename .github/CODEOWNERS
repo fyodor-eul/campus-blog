@@ -10,7 +10,7 @@
 /models/Post.js @MosesHeeJY123 @fyodor-eul
 
 # Update Post - Thiha and Jade
-/public/js/thiha.js @fyodor-eul @bunmiyoO
+/public/js/Thiha.js @fyodor-eul @bunmiyoO
 /utils/ThihaUtil.js @fyodor-eul @bunmiyoO
 
 # Add Comment - Jade and Moses
@@ -21,4 +21,4 @@
 /public/index.html @fyodor-eul @MosesHeeJY123
 
 # CODEOWNERS configuration
-/.github/CODEOWNERS @fyodor-eul @MosesHeeJY123
+/.github/CODEOWNERS @fyodor-eul @MosesHeeJY123 @bunmiyoO
