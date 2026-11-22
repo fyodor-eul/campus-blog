@@ -1,0 +1,24 @@
+
+# CampusBlog CODEOWNERS
+
+# Default owners for new and unassigned files
+* @fyodor-eul @MosesHeeJY123
+
+# Create Post - Moses and Thiha
+/public/js/MosesHee.js @MosesHeeJY123 @fyodor-eul
+/utils/MosesHeeUtil.js @MosesHeeJY123 @fyodor-eul
+/models/Post.js @MosesHeeJY123 @fyodor-eul
+
+# Update Post - Thiha and Jade
+/public/js/thiha.js @fyodor-eul @bunmiyoO
+/utils/ThihaUtil.js @fyodor-eul @bunmiyoO
+
+# Add Comment - Jade and Moses
+/public/js/JadeTey.js @bunmiyoO @MosesHeeJY123
+/models/Comments.js @bunmiyoO @MosesHeeJY123
+
+# Shared homepage
+/public/index.html @fyodor-eul @MosesHeeJY123
+
+# CODEOWNERS configuration
+/.github/CODEOWNERS @fyodor-eul @MosesHeeJY123
